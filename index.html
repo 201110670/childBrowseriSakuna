@@ -10,11 +10,14 @@
 		<script src="js/jquery.printpage.js"></script>
 		<script>
 var a=10;
+var a1=navigator.onLine;
+
 $( document ).ready(function() {
+ if(a1){
 setInterval(function(){
 a=a-1;
 if(a==0){
- window.location.href="http://gcccs.org/iSakuna-testing/login.php";
+window.location.href="http://gcccs.org/iSakuna-testing/login.php";
 }
 },1000);
 
@@ -32,11 +35,27 @@ if(a==0){
             html: html
     });
 	
-	 
+	 }else{
+  
+window.location.href="#page2";
+}
 })
+
+
+
 </script>
 </head>
 <body>
+<div data-role="page" data-theme="c" id="mainPage">
+	<div data-role="content">
+
+	</div>
+</div>
+<div data-role="page" data-theme="c" id="page2">
+	<div data-role="content">
+		<h3>Connection error: You are not currently connected to the service. please connect then try again.</h3>
+	</div>
+</div>
 </body>
 </html>
 
